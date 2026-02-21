@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(npm run dev:*)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(curl:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(node generate-pdf.cjs:*)",
+      "Bash(start \"\" \"C:\\\\Users\\\\renis\\\\IdeaProjects\\\\untitled\\\\Udh%C3%ABzues_Zhvillues_Ueb.pdf\")",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)"
+    ]
+  }
+}
