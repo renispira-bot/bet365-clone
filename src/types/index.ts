@@ -76,12 +76,51 @@ export type PopularBet = {
   totalOdds: number;
 };
 
-export type ViewType = 'home' | 'in-play' | 'sport';
+export type ViewType = 'home' | 'in-play' | 'sport' | 'casino';
 export type SubViewType = 'all' | 'today' | 'tomorrow' | 'upcoming';
 export type ModalType = 'login' | 'register' | null;
+export type BetSlipTab = 'single' | 'multiple';
 
 export type BetSlipAction =
   | { type: 'ADD_SELECTION'; payload: BetSelection }
   | { type: 'REMOVE_SELECTION'; payload: string }
   | { type: 'CLEAR_ALL' }
   | { type: 'UPDATE_ODDS'; payload: { id: string; odds: number } };
+
+// Match extras
+export type FormResult = 'W' | 'D' | 'L';
+
+export type MatchExtras = {
+  matchId: string;
+  homeForm: FormResult[];
+  awayForm: FormResult[];
+  homePosition: number;
+  awayPosition: number;
+  overUnder25: { over: number; under: number };
+  btts: { yes: number; no: number };
+};
+
+// Live match stats
+export type LiveMatchStats = {
+  matchId: string;
+  homePossession: number;
+  awayPossession: number;
+  homeShots: number;
+  awayShots: number;
+  homeCorners: number;
+  awayCorners: number;
+};
+
+// Casino types
+export type CasinoCategory = 'all' | 'popular' | 'new' | 'jackpot' | 'table';
+
+export type CasinoGame = {
+  id: string;
+  name: string;
+  provider: string;
+  category: CasinoCategory;
+  gradient: string;
+  pattern?: string;
+  isNew?: boolean;
+  jackpotAmount?: string;
+};

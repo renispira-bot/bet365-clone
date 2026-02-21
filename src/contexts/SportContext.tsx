@@ -11,6 +11,7 @@ type SportContextType = {
   navigateToSport: (sport: SportId) => void;
   navigateToHome: () => void;
   navigateToInPlay: () => void;
+  navigateToCasino: () => void;
 };
 
 const SportContext = createContext<SportContextType | null>(null);
@@ -38,6 +39,12 @@ export function SportProvider({ children }: { children: ReactNode }) {
     setSubView('all');
   }, []);
 
+  const navigateToCasino = useCallback(() => {
+    setActiveSport(null);
+    setCurrentView('casino');
+    setSubView('all');
+  }, []);
+
   return (
     <SportContext.Provider value={{
       activeSport,
@@ -49,6 +56,7 @@ export function SportProvider({ children }: { children: ReactNode }) {
       navigateToSport,
       navigateToHome,
       navigateToInPlay,
+      navigateToCasino,
     }}>
       {children}
     </SportContext.Provider>

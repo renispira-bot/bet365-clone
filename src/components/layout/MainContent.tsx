@@ -1,14 +1,24 @@
 import { useSport } from '../../contexts/SportContext';
 import { sports } from '../../data/sports';
 import FeaturedBanner from '../features/FeaturedBanner';
+import FeaturedMatch from '../features/FeaturedMatch';
 import QuickLinks from '../features/QuickLinks';
 import PopularBets from '../features/PopularBets';
 import LiveMatches from '../sports/LiveMatches';
 import SportNav from '../sports/SportNav';
 import UpcomingMatches from '../sports/UpcomingMatches';
+import CasinoView from '../casino/CasinoView';
 
 export default function MainContent() {
   const { currentView, activeSport } = useSport();
+
+  if (currentView === 'casino') {
+    return (
+      <main className="main-content">
+        <CasinoView />
+      </main>
+    );
+  }
 
   if (currentView === 'in-play') {
     return (
@@ -35,6 +45,7 @@ export default function MainContent() {
   return (
     <main className="main-content">
       <FeaturedBanner />
+      <FeaturedMatch />
       <QuickLinks />
       <LiveMatches />
       <PopularBets />

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useBetSlip } from '../../contexts/BetSlipContext';
+import type { BetSlipTab } from '../../types';
 
 export default function BetSlip() {
   const { selections, stake, setStake, totalOdds, potentialReturns, removeSelection, clearAll } = useBetSlip();
   const [collapsed, setCollapsed] = useState(false);
+  const [activeTab, setActiveTab] = useState<BetSlipTab>('single');
 
   return (
     <aside className={`betslip ${collapsed ? 'betslip--collapsed' : ''}`}>
@@ -19,6 +21,21 @@ export default function BetSlip() {
 
       {!collapsed && (
         <div className="betslip__body">
+          <div className="betslip__tabs">
+            <button
+              className={`betslip__tab ${activeTab === 'single' ? 'betslip__tab--active' : ''}`}
+              onClick={() => setActiveTab('single')}
+            >
+              Tekli
+            </button>
+            <button
+              className={`betslip__tab ${activeTab === 'multiple' ? 'betslip__tab--active' : ''}`}
+              onClick={() => setActiveTab('multiple')}
+            >
+              Shumëfish
+            </button>
+          </div>
+
           {selections.length === 0 ? (
             <div className="betslip__empty">
               <p>Kuponi juaj është bosh</p>

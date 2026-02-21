@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { liveMatches as initialLiveMatches } from '../../data/liveMatches';
+import { liveMatchStats as initialStats } from '../../data/liveMatchStats';
 import LeagueGroup from './LeagueGroup';
 import SportIcon from '../common/SportIcon';
-import type { LiveMatch, SportId } from '../../types';
+import type { LiveMatch, LiveMatchStats, SportId } from '../../types';
 
 export default function LiveMatches() {
   const [liveData, setLiveData] = useState<LiveMatch[]>(initialLiveMatches);
   const [filterSport, setFilterSport] = useState<SportId | 'all'>('all');
+  const [statsData, setStatsData] = useState<Record<string, LiveMatchStats>>(initialStats);
 
   const shiftOdds = useCallback(() => {
     setLiveData(prev => prev.map(match => {
@@ -24,6 +26,23 @@ export default function LiveMatches() {
         minute: match.minute > 0 ? match.minute + 1 : match.minute,
       };
     }));
+
+    // Also shift live stats slightly
+    setStatsData(prev => {
+      const next = { ...prev };
+      for (const key of Object.keys(next)) {
+        const s = { ...next[key] };
+        const possShift = Math.floor(Math.random() * 3) - 1;
+        s.homePossession = Math.max(30, Math.min(70, s.homePossession + possShift));
+        s.awayPossession = 100 - s.homePossession;
+        if (Math.random() > 0.7) s.homeShots += 1;
+        if (Math.random() > 0.7) s.awayShots += 1;
+        if (Math.random() > 0.9) s.homeCorners += 1;
+        if (Math.random() > 0.9) s.awayCorners += 1;
+        next[key] = s;
+      }
+      return next;
+    });
   }, []);
 
   useEffect(() => {
@@ -67,7 +86,7 @@ export default function LiveMatches() {
       </div>
       <div className="live-matches__list">
         {Object.entries(grouped).map(([league, matches]) => (
-          <LeagueGroup key={league} leagueName={league} matches={matches} isLive />
+          <LeagueGroup key={league} leagueName={league} matches={matches} isLive liveStats={statsData} />
         ))}
       </div>
     </div>

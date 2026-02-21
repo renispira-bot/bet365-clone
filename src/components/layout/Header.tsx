@@ -6,7 +6,7 @@ import { sports } from '../../data/sports';
 const topSports = sports.slice(0, 8);
 
 export default function Header() {
-  const { activeSport, currentView, navigateToSport, navigateToHome, navigateToInPlay } = useSport();
+  const { activeSport, currentView, navigateToSport, navigateToHome, navigateToInPlay, navigateToCasino } = useSport();
   const { openLogin, openRegister } = useModal();
   const { selections } = useBetSlip();
 
@@ -16,9 +16,18 @@ export default function Header() {
         <button className="header__logo" onClick={navigateToHome}>
           leo 365
         </button>
+        <div className="header__search">
+          <span className="header__search-icon">&#128269;</span>
+          <input
+            type="text"
+            className="header__search-input"
+            placeholder="Kërko ndeshje, skuadra..."
+            readOnly
+          />
+        </div>
         <nav className="header__top-nav">
           <button
-            className={`header__top-link ${currentView === 'home' ? 'header__top-link--active' : ''}`}
+            className={`header__top-link ${currentView === 'home' || currentView === 'sport' ? 'header__top-link--active' : ''}`}
             onClick={navigateToHome}
           >
             Sporte
@@ -29,8 +38,21 @@ export default function Header() {
           >
             Live
           </button>
+          <button
+            className={`header__top-link ${currentView === 'casino' ? 'header__top-link--active' : ''}`}
+            onClick={navigateToCasino}
+          >
+            Kazino
+          </button>
         </nav>
         <div className="header__actions">
+          <div className="header__balance">
+            <span className="header__balance-amount">$1,250.00</span>
+          </div>
+          <button className="header__notifications">
+            <span className="header__bell">&#128276;</span>
+            <span className="header__notif-badge">3</span>
+          </button>
           <button className="header__login" onClick={openLogin}>Hyr</button>
           <button className="header__join" onClick={openRegister}>
             Regjistrohu

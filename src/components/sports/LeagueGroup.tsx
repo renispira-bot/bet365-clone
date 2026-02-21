@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import MatchRow from './MatchRow';
-import type { Match, LiveMatch } from '../../types';
+import type { Match, LiveMatch, LiveMatchStats } from '../../types';
 
 type LeagueGroupProps = {
   leagueName: string;
   matches: (Match | LiveMatch)[];
   isLive?: boolean;
   defaultExpanded?: boolean;
+  liveStats?: Record<string, LiveMatchStats>;
 };
 
-export default function LeagueGroup({ leagueName, matches, isLive = false, defaultExpanded = true }: LeagueGroupProps) {
+export default function LeagueGroup({ leagueName, matches, isLive = false, defaultExpanded = true, liveStats }: LeagueGroupProps) {
   const [expanded, setExpanded] = useState(defaultExpanded);
 
   return (
@@ -21,7 +22,7 @@ export default function LeagueGroup({ leagueName, matches, isLive = false, defau
       {expanded && (
         <div className="league-group__matches">
           {matches.map(match => (
-            <MatchRow key={match.id} match={match} isLive={isLive} />
+            <MatchRow key={match.id} match={match} isLive={isLive} liveStats={liveStats?.[match.id]} />
           ))}
         </div>
       )}
