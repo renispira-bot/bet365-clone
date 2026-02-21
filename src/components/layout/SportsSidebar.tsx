@@ -16,7 +16,7 @@ export default function SportsSidebar() {
     <aside className="sidebar">
       <button className="sidebar__in-play" onClick={navigateToInPlay}>
         <span className="sidebar__live-dot" />
-        In-Play
+        Live
       </button>
       <div className="sidebar__sports">
         {sports.map(sport => (

@@ -44,15 +44,15 @@ export default function LiveMatches() {
   return (
     <div className="live-matches">
       <div className="live-matches__header">
-        <h2>In-Play</h2>
-        <span className="live-matches__count">{liveData.length} events</span>
+        <h2>Live</h2>
+        <span className="live-matches__count">{liveData.length} ngjarje</span>
       </div>
       <div className="live-matches__filters">
         <button
           className={`live-filter-btn ${filterSport === 'all' ? 'live-filter-btn--active' : ''}`}
           onClick={() => setFilterSport('all')}
         >
-          All ({liveData.length})
+          Të gjitha ({liveData.length})
         </button>
         {sportIds.map(sid => (
           <button

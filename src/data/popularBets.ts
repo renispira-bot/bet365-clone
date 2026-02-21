@@ -3,7 +3,7 @@ import type { PopularBet } from '../types';
 export const popularBets: PopularBet[] = [
   {
     id: 'pb1',
-    title: 'Premier League Treble',
+    title: 'Trefish Premier League',
     selections: [
       { matchLabel: 'Man City vs Arsenal', pick: 'Man City', odds: 1.85 },
       { matchLabel: 'Liverpool vs Chelsea', pick: 'Liverpool', odds: 1.72 },
@@ -13,17 +13,17 @@ export const popularBets: PopularBet[] = [
   },
   {
     id: 'pb2',
-    title: 'European Football Acca',
+    title: 'Akumulator Europian',
     selections: [
       { matchLabel: 'Real Madrid vs Barcelona', pick: 'Real Madrid', odds: 2.30 },
       { matchLabel: 'Bayern vs Dortmund', pick: 'Bayern Munich', odds: 1.55 },
-      { matchLabel: 'PSG vs Bayern Munich', pick: 'Draw', odds: 3.40 },
+      { matchLabel: 'PSG vs Bayern Munich', pick: 'Barazim', odds: 3.40 },
     ],
     totalOdds: 12.13,
   },
   {
     id: 'pb3',
-    title: 'Tennis Double',
+    title: 'Dyshe Tenisi',
     selections: [
       { matchLabel: 'Djokovic vs Alcaraz', pick: 'C. Alcaraz', odds: 1.75 },
       { matchLabel: 'Sinner vs Medvedev', pick: 'J. Sinner', odds: 1.55 },
@@ -32,7 +32,7 @@ export const popularBets: PopularBet[] = [
   },
   {
     id: 'pb4',
-    title: 'NBA Parlay',
+    title: 'Kombinim NBA',
     selections: [
       { matchLabel: 'Lakers vs Celtics', pick: 'Boston Celtics', odds: 1.70 },
       { matchLabel: 'Warriors vs Bucks', pick: 'Golden State', odds: 1.95 },
@@ -42,16 +42,16 @@ export const popularBets: PopularBet[] = [
   },
   {
     id: 'pb5',
-    title: 'Six Nations Special',
+    title: 'Speciale Six Nations',
     selections: [
-      { matchLabel: 'England vs France', pick: 'France', odds: 1.55 },
-      { matchLabel: 'Ireland vs Wales', pick: 'Ireland', odds: 1.15 },
+      { matchLabel: 'Angli vs Francë', pick: 'Francë', odds: 1.55 },
+      { matchLabel: 'Irlandë vs Uells', pick: 'Irlandë', odds: 1.15 },
     ],
     totalOdds: 1.78,
   },
   {
     id: 'pb6',
-    title: 'Friday Night Acca',
+    title: 'Akumulator i së Premtes',
     selections: [
       { matchLabel: 'Everton vs Wolves', pick: 'Everton', odds: 1.55 },
       { matchLabel: 'Atletico vs Sevilla', pick: 'Atletico Madrid', odds: 1.65 },

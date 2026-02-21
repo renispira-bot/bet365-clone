@@ -14,26 +14,26 @@ export default function Header() {
     <header className="header">
       <div className="header__top">
         <button className="header__logo" onClick={navigateToHome}>
-          bet365
+          leo 365
         </button>
         <nav className="header__top-nav">
           <button
             className={`header__top-link ${currentView === 'home' ? 'header__top-link--active' : ''}`}
             onClick={navigateToHome}
           >
-            Sports
+            Sporte
           </button>
           <button
             className={`header__top-link ${currentView === 'in-play' ? 'header__top-link--active' : ''}`}
             onClick={navigateToInPlay}
           >
-            In-Play
+            Live
           </button>
         </nav>
         <div className="header__actions">
-          <button className="header__login" onClick={openLogin}>Log In</button>
+          <button className="header__login" onClick={openLogin}>Hyr</button>
           <button className="header__join" onClick={openRegister}>
-            Join
+            Regjistrohu
             {selections.length > 0 && (
               <span className="header__betslip-badge">{selections.length}</span>
             )}

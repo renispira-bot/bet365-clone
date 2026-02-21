@@ -12,23 +12,23 @@ export default function LoginModal() {
     <div className="modal-backdrop" onClick={handleBackdrop}>
       <div className="modal">
         <div className="modal__header">
-          <h2>Log In</h2>
+          <h2>Hyr</h2>
           <button className="modal__close" onClick={closeModal}>&times;</button>
         </div>
         <form className="modal__form" onSubmit={e => e.preventDefault()}>
           <div className="modal__field">
-            <label htmlFor="login-user">Username</label>
-            <input id="login-user" type="text" placeholder="Enter username" autoComplete="username" />
+            <label htmlFor="login-user">Emri i përdoruesit</label>
+            <input id="login-user" type="text" placeholder="Shkruaj emrin e përdoruesit" autoComplete="username" />
           </div>
           <div className="modal__field">
-            <label htmlFor="login-pass">Password</label>
-            <input id="login-pass" type="password" placeholder="Enter password" autoComplete="current-password" />
+            <label htmlFor="login-pass">Fjalëkalimi</label>
+            <input id="login-pass" type="password" placeholder="Shkruaj fjalëkalimin" autoComplete="current-password" />
           </div>
-          <button type="submit" className="modal__submit">Log In</button>
+          <button type="submit" className="modal__submit">Hyr</button>
           <div className="modal__footer">
-            <span>Don't have an account? </span>
+            <span>Nuk ke llogari? </span>
             <button type="button" className="modal__link" onClick={() => { closeModal(); openRegister(); }}>
-              Register
+              Regjistrohu
             </button>
           </div>
         </form>

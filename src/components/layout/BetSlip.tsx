@@ -9,7 +9,7 @@ export default function BetSlip() {
     <aside className={`betslip ${collapsed ? 'betslip--collapsed' : ''}`}>
       <button className="betslip__header" onClick={() => setCollapsed(!collapsed)}>
         <span className="betslip__title">
-          Bet Slip
+          Kuponi
           {selections.length > 0 && (
             <span className="betslip__count">{selections.length}</span>
           )}
@@ -21,8 +21,8 @@ export default function BetSlip() {
         <div className="betslip__body">
           {selections.length === 0 ? (
             <div className="betslip__empty">
-              <p>Your bet slip is empty</p>
-              <p className="betslip__hint">Click on odds to add selections</p>
+              <p>Kuponi juaj është bosh</p>
+              <p className="betslip__hint">Kliko mbi kuotat për të shtuar zgjedhje</p>
             </div>
           ) : (
             <>
@@ -48,7 +48,7 @@ export default function BetSlip() {
               </div>
 
               <div className="betslip__stake-row">
-                <label htmlFor="stake-input" className="betslip__stake-label">Stake</label>
+                <label htmlFor="stake-input" className="betslip__stake-label">Shuma</label>
                 <div className="betslip__stake-input-wrapper">
                   <span className="betslip__currency">$</span>
                   <input
@@ -66,21 +66,21 @@ export default function BetSlip() {
 
               <div className="betslip__summary">
                 <div className="betslip__summary-row">
-                  <span>Total Odds</span>
+                  <span>Kuota Totale</span>
                   <span>{totalOdds.toFixed(2)}</span>
                 </div>
                 <div className="betslip__summary-row betslip__summary-row--returns">
-                  <span>Potential Returns</span>
+                  <span>Fitimi i Mundshëm</span>
                   <span>${potentialReturns.toFixed(2)}</span>
                 </div>
               </div>
 
               <button className="betslip__place-btn">
-                Place Bet {stake ? `$${parseFloat(stake).toFixed(2)}` : ''}
+                Vendos Bast {stake ? `$${parseFloat(stake).toFixed(2)}` : ''}
               </button>
 
               <button className="betslip__clear" onClick={clearAll}>
-                Remove All Selections
+                Fshi Të Gjitha Zgjedhjet
               </button>
             </>
           )}

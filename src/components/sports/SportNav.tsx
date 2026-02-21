@@ -2,10 +2,10 @@ import { useSport } from '../../contexts/SportContext';
 import type { SubViewType } from '../../types';
 
 const tabs: { id: SubViewType; label: string }[] = [
-  { id: 'all', label: 'All Matches' },
-  { id: 'today', label: 'Today' },
-  { id: 'tomorrow', label: 'Tomorrow' },
-  { id: 'upcoming', label: 'Upcoming' },
+  { id: 'all', label: 'Të Gjitha Ndeshjet' },
+  { id: 'today', label: 'Sot' },
+  { id: 'tomorrow', label: 'Nesër' },
+  { id: 'upcoming', label: 'Së Shpejti' },
 ];
 
 export default function SportNav() {

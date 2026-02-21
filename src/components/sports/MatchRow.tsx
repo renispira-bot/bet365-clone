@@ -41,19 +41,19 @@ export default function MatchRow({ match, isLive = false }: MatchRowProps) {
       </div>
       <div className="match-row__odds">
         <OddsButton
-          selection={{ id: `${match.id}-home`, matchId: match.id, matchLabel, market: 'Match Result', selection: match.homeTeam, odds: match.odds.home }}
+          selection={{ id: `${match.id}-home`, matchId: match.id, matchLabel, market: 'Rezultati i Ndeshjes', selection: match.homeTeam, odds: match.odds.home }}
           odds={match.odds.home}
           label="1"
         />
         {match.odds.draw !== null && (
           <OddsButton
-            selection={{ id: `${match.id}-draw`, matchId: match.id, matchLabel, market: 'Match Result', selection: 'Draw', odds: match.odds.draw }}
+            selection={{ id: `${match.id}-draw`, matchId: match.id, matchLabel, market: 'Rezultati i Ndeshjes', selection: 'Barazim', odds: match.odds.draw }}
             odds={match.odds.draw}
             label="X"
           />
         )}
         <OddsButton
-          selection={{ id: `${match.id}-away`, matchId: match.id, matchLabel, market: 'Match Result', selection: match.awayTeam, odds: match.odds.away }}
+          selection={{ id: `${match.id}-away`, matchId: match.id, matchLabel, market: 'Rezultati i Ndeshjes', selection: match.awayTeam, odds: match.odds.away }}
           odds={match.odds.away}
           label="2"
         />

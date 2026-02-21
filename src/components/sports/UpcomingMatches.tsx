@@ -23,7 +23,7 @@ export default function UpcomingMatches() {
         <LeagueGroup key={league} leagueName={league} matches={leagueMatches} />
       ))}
       {Object.keys(grouped).length === 0 && (
-        <div className="no-matches">No upcoming matches found</div>
+        <div className="no-matches">Nuk u gjetën ndeshje të ardhshme</div>
       )}
     </div>
   );

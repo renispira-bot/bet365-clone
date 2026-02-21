@@ -4,18 +4,18 @@ export default function Footer() {
       <div className="footer__content">
         <div className="footer__gambling">
           <p className="footer__warning">
-            Please gamble responsibly. This is a demo site with no real betting functionality.
+            Ju lutemi luani me përgjegjësi. Kjo është një faqe demo pa funksionalitet real bastesh.
           </p>
-          <p className="footer__age">18+ | Gambling can be addictive. Play responsibly.</p>
+          <p className="footer__age">18+ | Lojërat e fatit mund të krijojnë varësi. Luani me përgjegjësi.</p>
         </div>
         <div className="footer__links">
-          <span>Terms & Conditions</span>
-          <span>Privacy Policy</span>
-          <span>Responsible Gambling</span>
-          <span>Contact Us</span>
+          <span>Kushtet & Rregullat</span>
+          <span>Politika e Privatësisë</span>
+          <span>Lojë e Përgjegjshme</span>
+          <span>Na Kontaktoni</span>
         </div>
         <div className="footer__copy">
-          &copy; 2026 bet365 Clone - Demo Only. Not affiliated with bet365.
+          &copy; 2026 leo 365 - Vetëm Demo.
         </div>
       </div>
     </footer>

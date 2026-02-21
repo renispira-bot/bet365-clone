@@ -3,7 +3,7 @@ import { popularBets } from '../../data/popularBets';
 export default function PopularBets() {
   return (
     <div className="popular-bets">
-      <h3 className="popular-bets__title">Popular Bets</h3>
+      <h3 className="popular-bets__title">Bastet Popullore</h3>
       <div className="popular-bets__grid">
         {popularBets.map(bet => (
           <div key={bet.id} className="popular-bet-card">
@@ -18,7 +18,7 @@ export default function PopularBets() {
               ))}
             </div>
             <div className="popular-bet-card__footer">
-              <span className="popular-bet-card__total">Total Odds: {bet.totalOdds.toFixed(2)}</span>
+              <span className="popular-bet-card__total">Kuota Totale: {bet.totalOdds.toFixed(2)}</span>
             </div>
           </div>
         ))}
