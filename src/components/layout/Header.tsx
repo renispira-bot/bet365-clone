@@ -14,7 +14,7 @@ export default function Header() {
     <header className="header">
       <div className="header__top">
         <button className="header__logo" onClick={navigateToHome}>
-          leo 365
+          Alfa 711
         </button>
         <div className="header__search">
           <span className="header__search-icon">&#128269;</span>

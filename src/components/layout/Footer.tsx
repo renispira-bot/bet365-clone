@@ -15,7 +15,7 @@ export default function Footer() {
           <span>Na Kontaktoni</span>
         </div>
         <div className="footer__copy">
-          &copy; 2026 leo 365 - Vetëm Demo.
+          &copy; 2026 Alfa 711 - Vetëm Demo.
         </div>
       </div>
     </footer>
